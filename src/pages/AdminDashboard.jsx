@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 const API_URL = process.env.REACT_APP_BACKEND_URL || "http://localhost:5000";
-const DEFAULT_TICKET_PRICE = 450; // ✅ Updated ticket price
+const DEFAULT_TICKET_PRICE = 450; 
 
 export default function AdminDashboard() {
   const [bookings, setBookings] = useState([]);

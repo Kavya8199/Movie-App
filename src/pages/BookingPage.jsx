@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 
 export default function BookingPage() {
-  const { id } = useParams(); // Movie ID from URL
+  const { id } = useParams(); 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [seats, setSeats] = useState(1);
@@ -33,7 +33,7 @@ export default function BookingPage() {
         date,
         time,
         movieId: id,
-        movieTitle: `Movie ${id}`, // You can replace this with actual title
+        movieTitle: `Movie ${id}`, 
       });
 
       setMessage(res.data.message);

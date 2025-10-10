@@ -33,7 +33,7 @@ export default function Navbar() {
               WebkitTextFillColor: "transparent",
               fontSize: "2.0rem",
               letterSpacing: "1px",
-              width: "1000px", // ✅ Increased width for cinematic look
+              width: "1000px", 
               whiteSpace: "nowrap",
             }}
           >

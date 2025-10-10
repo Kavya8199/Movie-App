@@ -3,7 +3,7 @@ import React, { useState, useContext } from "react";
 import axios from "axios";
 import { AuthContext } from "../context/AuthContext";
 import { GoogleLogin } from "@react-oauth/google";
-import { jwtDecode } from "jwt-decode"; // ✅ fixed import
+import { jwtDecode } from "jwt-decode"; 
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
@@ -30,7 +30,7 @@ export default function Login() {
 
 
   const [resetEmail, setResetEmail] = useState("");
-  const [resetToken, setResetToken] = useState(""); // user pastes token manually
+  const [resetToken, setResetToken] = useState(""); 
   const [newPassword, setNewPassword] = useState("");
   const [showNewPassword, setShowNewPassword] = useState(false);
 
@@ -103,7 +103,7 @@ export default function Login() {
       await axios.post(`${API_URL}/forgot-password`, {
         email: email.trim().toLowerCase(),
       });
-      setResetEmail(email); // store email for reset
+      setResetEmail(email); 
       setShowResetLink(true);
       setMessage(
         "✅ Password reset link generated! Copy the token from terminal and paste below."

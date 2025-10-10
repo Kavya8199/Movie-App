@@ -8,8 +8,8 @@ const MAX_SEATS = 6;
 const ROWS = 10;
 const SEATS_PER_ROW = 12;
 
-const SEAT_IMG = "https://cdn-icons-png.flaticon.com/512/814/814513.png"; // empty seat
-const SEAT_SELECTED_IMG = "https://cdn-icons-png.flaticon.com/512/2922/2922852.png"; // selected seat
+const SEAT_IMG = "https://cdn-icons-png.flaticon.com/512/814/814513.png"; 
+const SEAT_SELECTED_IMG = "https://cdn-icons-png.flaticon.com/512/2922/2922852.png"; 
 
 const SEAT_WIDTH = 35;
 const SEAT_HEIGHT = 25;

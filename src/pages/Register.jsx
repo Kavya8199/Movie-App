@@ -10,7 +10,7 @@ export default function ResetPasswordUI() {
   const [newPassword, setNewPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [step, setStep] = useState(1); // Step 1: request token, Step 2: reset password
+  const [step, setStep] = useState(1); 
   const [error, setError] = useState("");
   const [message, setMessage] = useState("");
 
