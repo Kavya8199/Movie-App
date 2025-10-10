@@ -1,0 +1,41 @@
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  padding: 1rem;
+  background-color: #333;
+  color: white;
+}
+
+nav a {
+  color: white;
+  margin-right: 1rem;
+  text-decoration: none;
+}
+
+.movies-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.movie-card {
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+  width: 200px;
+  text-align: center;
+}
+
+.modal {
+  position: fixed;
+  top: 20%;
+  left: 40%;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #333;
+}

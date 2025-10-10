@@ -36,3 +36,124 @@
     transform: rotate(360deg);
   }
 }
+
+@keyframes rotate-cube {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  50% { transform: rotateY(180deg) rotateX(180deg); }
+  100% { transform: rotateY(360deg) rotateX(360deg); }
+}
+.animate-rotate-cube {
+  animation: rotate-cube 20s linear infinite;
+}
+
+
+@keyframes neon-border {
+  0%   { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #784BA0, 0 0 30px #2B86C5; }
+  25%  { box-shadow: 0 0 10px #784BA0, 0 0 20px #2B86C5, 0 0 30px #FF3CAC; }
+  50%  { box-shadow: 0 0 10px #2B86C5, 0 0 20px #FF3CAC, 0 0 30px #784BA0; }
+  75%  { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #2B86C5, 0 0 30px #784BA0; }
+  100% { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #784BA0, 0 0 30px #2B86C5; }
+}
+.animate-neon-border {
+  animation: neon-border 3s linear infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+
+@keyframes star-blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.animate-star-blink {
+  animation-name: star-blink;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes rotate-cube {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  50% { transform: rotateY(180deg) rotateX(180deg); }
+  100% { transform: rotateY(360deg) rotateX(360deg); }
+}
+.animate-rotate-cube {
+  animation: rotate-cube 20s linear infinite;
+}
+
+
+@keyframes neon-border {
+  0%   { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #784BA0, 0 0 30px #2B86C5; }
+  25%  { box-shadow: 0 0 10px #784BA0, 0 0 20px #2B86C5, 0 0 30px #FF3CAC; }
+  50%  { box-shadow: 0 0 10px #2B86C5, 0 0 20px #FF3CAC, 0 0 30px #784BA0; }
+  75%  { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #2B86C5, 0 0 30px #784BA0; }
+  100% { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #784BA0, 0 0 30px #2B86C5; }
+}
+.animate-neon-border {
+  animation: neon-border 3s linear infinite;
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.animate-star-blink {
+  display: block;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg) translateX(var(--radius)); }
+  100% { transform: rotate(360deg) translateX(var(--radius)); }
+}
+
+@keyframes neon-border {
+  0%   { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #784BA0, 0 0 30px #2B86C5; }
+  25%  { box-shadow: 0 0 10px #784BA0, 0 0 20px #2B86C5, 0 0 30px #FF3CAC; }
+  50%  { box-shadow: 0 0 10px #2B86C5, 0 0 20px #FF3CAC, 0 0 30px #784BA0; }
+  75%  { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #2B86C5, 0 0 30px #784BA0; }
+  100% { box-shadow: 0 0 10px #FF3CAC, 0 0 20px #784BA0, 0 0 30px #2B86C5; }
+}
+.animate-neon-border {
+  animation: neon-border 3s linear infinite;
+  border-radius: inherit;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.animate-star-blink {
+  display: block;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg) translateX(var(--radius)); }
+  100% { transform: rotate(360deg) translateX(var(--radius)); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.animate-star-blink {
+  display: block;
+}
+
+
+@keyframes spin {
+  0% { transform: rotate(0deg) translateX(var(--radius)); }
+  100% { transform: rotate(360deg) translateX(var(--radius)); }
+}
+
+
+@keyframes cube-float {
+  0%, 100% { transform: rotate(-3deg) translateY(0); }
+  50% { transform: rotate(3deg) translateY(-5px); }
+}
+.animate-cube-float {
+  animation: cube-float 3s ease-in-out infinite;
+}
