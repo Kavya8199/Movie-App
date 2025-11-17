@@ -38,7 +38,8 @@ export default function App() {
           >
             <Navbar theme={theme} toggleTheme={toggleTheme} />
 
-            <main className="pt-20 px-4 sm:px-6 lg:px-8">
+            
+            <main className="pt-2 px-4 sm:px-6 lg:px-8">
               <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
@@ -47,7 +48,7 @@ export default function App() {
                 <Route path="/reset-password/:token" element={<ResetPassword />} />
                 <Route path="/movie/:id" element={<MovieDetails />} />
                 <Route path="/booking" element={<BookingPage />} />
-                <Route path="/admin" element={<AdminDashboard />} /> {/* Admin route without protection */}
+                <Route path="/admin" element={<AdminDashboard />} />
               </Routes>
             </main>
           </div>

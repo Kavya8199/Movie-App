@@ -1,5 +1,4 @@
 import React, { useEffect, useState, useContext, useCallback } from "react";
-import FilterBar from "../components/FilterBar";
 import HeroSection from "../components/HeroSection";
 import MovieList from "../components/MovieList";
 import BookingModal from "../components/BookingModal";
@@ -9,8 +8,6 @@ import { AuthContext } from "../context/AuthContext";
 
 export default function Home() {
   const [movies, setMovies] = useState([]);
-  const [search, setSearch] = useState("");
-  const [filters, setFilters] = useState({ genre: "", rating: "", language: "" });
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
@@ -20,6 +17,9 @@ export default function Home() {
 
   const { theme } = useContext(ThemeContext);
   const { user } = useContext(AuthContext);
+
+  const [search] = useState("");
+  const [filters] = useState({ genre: "", rating: "", language: "" });
 
   const loadMovies = useCallback(
     async (pageNum = 1, reset = false) => {
@@ -56,12 +56,6 @@ export default function Home() {
   useEffect(() => {
     loadMovies(1, true);
   }, [loadMovies]);
-
-  const handleSearch = async () => loadMovies(1, true);
-  const handleFiltersChange = async (newFilters) => {
-    setFilters(newFilters);
-    await loadMovies(1, true);
-  };
 
   const handlePrevious = () => {
     if (page > 1) {
@@ -109,35 +103,9 @@ export default function Home() {
         theme === "dark" ? "bg-gray-900 text-white" : "bg-gray-100 text-gray-900"
       }`}
     >
-      {/* Header */}
-      <div className="w-full text-center relative z-30 -mt-12 flex justify-center items-center gap-3">
-        <span
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-lg text-2xl md:text-4xl font-extrabold shadow-lg"
-          style={{
-            fontFamily: "'Poppins', sans-serif",
-            background: "linear-gradient(90deg, #FACC15, #EF4444, #EC4899)",
-            WebkitBackgroundClip: "text",
-            color: "transparent",
-            textShadow: "2px 2px 8px rgba(0,0,0,0.3)",
-          }}
-        >
-          Welcome to Movie Hub
-          <span
-            className="inline-block text-4xl"
-            style={{
-              color: theme === "dark" ? "#fff" : "#000",
-              animation: "spin-slow 8s linear infinite",
-              transformOrigin: "50% 50%",
-            }}
-          >
-            🎞️
-          </span>
-        </span>
-      </div>
-
-     
+      
       {movies.length > 0 && (
-        <div className="mt-2">
+        <div className="mt-16"> 
           <HeroSection
             movies={movies}
             onWatchTrailer={handleWatchTrailer}
@@ -147,29 +115,13 @@ export default function Home() {
       )}
 
       
+      {loginMessage && (
+        <p className="text-center text-yellow-400 font-semibold my-4">
+          {loginMessage}
+        </p>
+      )}
+
       <div className="max-w-7xl mx-auto px-4">
-        <div
-          className={`sticky top-14 z-20 py-2 ${
-            theme === "dark" ? "bg-gray-900" : "bg-gray-100"
-          }`}
-        >
-          <FilterBar
-            search={search}
-            setSearch={setSearch}
-            onSearch={handleSearch}
-            filters={filters}
-            onFiltersChange={handleFiltersChange}
-          />
-        </div>
-
-        
-        {loginMessage && (
-          <p className="text-center text-yellow-400 font-semibold my-4">
-            {loginMessage}
-          </p>
-        )}
-
-       
         <MovieList
           movies={movies}
           onWatchTrailer={handleWatchTrailer}
@@ -200,7 +152,7 @@ export default function Home() {
         </div>
       )}
 
-
+     
       {selectedMovie && (
         <BookingModal
           movie={selectedMovie}
@@ -209,7 +161,7 @@ export default function Home() {
         />
       )}
 
-     
+      
       <div className="max-w-7xl mx-auto px-4 py-6 flex justify-center items-center gap-4">
         <button
           onClick={handlePrevious}
@@ -230,13 +182,6 @@ export default function Home() {
         </button>
         {loading && <span className="ml-4 text-gray-300">Loading...</span>}
       </div>
-
-      <style>{`
-        @keyframes spin-slow {
-          from { transform: rotate(0deg); }
-          to { transform: rotate(360deg); }
-        }
-      `}</style>
     </div>
   );
 }

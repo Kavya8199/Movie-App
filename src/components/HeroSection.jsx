@@ -58,8 +58,7 @@ export default function HeroSection({ movies, onWatchTrailer, onBookNow }) {
   }));
 
   return (
-    <div className="relative w-full h-[65vh] overflow-hidden perspective">
-
+    <div className="relative w-full h-[65vh] overflow-hidden perspective mt-0">
       
       <div className="absolute inset-0 cube-container z-0">
         {["front", "back", "right", "left", "top", "bottom"].map((face) => (
@@ -73,7 +72,7 @@ export default function HeroSection({ movies, onWatchTrailer, onBookNow }) {
         ))}
       </div>
 
-      
+     
       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent z-10" />
 
       
@@ -96,12 +95,12 @@ export default function HeroSection({ movies, onWatchTrailer, onBookNow }) {
         ))}
       </div>
 
-      
-      <div className="relative z-30 px-6 md:px-20 flex flex-col justify-end h-full pb-12 max-w-full text-white animate-appear">
-        <h2 className="text-3xl md:text-5xl font-extrabold drop-shadow-lg leading-tight">
+      {/* Movie Info */}
+      <div className="relative z-30 px-6 md:px-20 flex flex-col justify-end h-full pb-8 max-w-full text-white animate-appear">
+        <h2 className="text-2xl md:text-4xl font-extrabold drop-shadow-lg leading-tight">
           {movie.title}
         </h2>
-        <p className="mt-1 text-gray-300 text-md">
+        <p className="mt-1 text-gray-300 text-sm">
           {movie.release_date?.split("-")[0]} • ⭐ {movie.vote_average?.toFixed(1)}/10
         </p>
         <p className="mt-2 text-gray-200 text-sm line-clamp-3">{movie.overview}</p>
@@ -131,10 +130,19 @@ export default function HeroSection({ movies, onWatchTrailer, onBookNow }) {
 
         {movieDetails && (
           <div className="mt-2 text-gray-200 space-y-1 text-sm">
-            <p><strong>Genres:</strong> {movieDetails.genres?.map((g) => g.name).join(", ")}</p>
-            <p><strong>Runtime:</strong> {movieDetails.runtime} min</p>
-            <p><strong>Language:</strong> {movieDetails.original_language?.toUpperCase()}</p>
-            <p><strong>Popularity:</strong> {movieDetails.popularity} • <strong>Votes:</strong> {movieDetails.vote_count}</p>
+            <p>
+              <strong>Genres:</strong> {movieDetails.genres?.map((g) => g.name).join(", ")}
+            </p>
+            <p>
+              <strong>Runtime:</strong> {movieDetails.runtime} min
+            </p>
+            <p>
+              <strong>Language:</strong> {movieDetails.original_language?.toUpperCase()}
+            </p>
+            <p>
+              <strong>Popularity:</strong> {movieDetails.popularity} •{" "}
+              <strong>Votes:</strong> {movieDetails.vote_count}
+            </p>
           </div>
         )}
       </div>
@@ -147,7 +155,6 @@ export default function HeroSection({ movies, onWatchTrailer, onBookNow }) {
         />
       )}
 
-      
       <style>{`
         .perspective { perspective: 1000px; }
 
